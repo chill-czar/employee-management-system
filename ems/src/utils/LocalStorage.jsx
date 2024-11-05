@@ -36,7 +36,8 @@ const employees = [
         "taskDate": "2023-10-20",
         "category": "Client"
       }
-    ]
+    ],
+    "name": "shanker"
   },
   {
     "id": 2,
@@ -73,7 +74,8 @@ const employees = [
         "taskDate": "2023-10-15",
         "category": "Documentation"
       }
-    ]
+    ],
+    "name": "meet"
   },
   {
     "id": 3,
@@ -110,7 +112,8 @@ const employees = [
         "taskDate": "2023-10-10",
         "category": "Team"
       }
-    ]
+    ],
+    "name": "sarthak"
   },
   {
     "id": 4,
@@ -147,7 +150,8 @@ const employees = [
         "taskDate": "2023-10-12",
         "category": "Training"
       }
-    ]
+    ],
+    "name": "vikas"
   },
   {
     "id": 5,
@@ -184,7 +188,8 @@ const employees = [
         "taskDate": "2023-10-05",
         "category": "Analysis"
       }
-    ]
+    ],
+    "name": "ruchika"
   }
 ];
 
@@ -223,19 +228,17 @@ const admin = [{
       "taskDate": "2023-10-20",
       "category": "Administration"
     }
-  ]
+  ],
+  "name": "mustafa"
 }];
 
-
 export const setLocalStorage = () => {
-  localStorage.setItem('employees', JSON.stringify(employees))
-  localStorage.setItem('admin', JSON.stringify(admin))
+  localStorage.setItem('employees', JSON.stringify(employees));
+  localStorage.setItem('admin', JSON.stringify(admin));
 }
 
 export const getLocalStorage = () => {
-  const employess = JSON.parse(localStorage.getItem('employees'))
-  const admin = JSON.parse(localStorage.getItem('admin'))
-  console.log(employees, admin)
+  const employees = JSON.parse(localStorage.getItem('employees'));
+  const admin = JSON.parse(localStorage.getItem('admin'));
+  return { employees, admin };
 }
-
-
