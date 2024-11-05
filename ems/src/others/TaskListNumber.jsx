@@ -2,7 +2,7 @@ import React from 'react'
 
 const TaskListNumber = ({ data }) => {
     console.log("tasklistnumber", data)
-    const { newTask, completed, failed } = data
+    // const { newTask, completed, failed } = data
     return (
         <div className='flex mt-10 justify-between gap-5  screen '>
             <div className=' rounded-xl py-6 px-9 w-[45%] p-10  bg-red-400 '>
