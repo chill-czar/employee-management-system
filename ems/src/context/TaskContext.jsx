@@ -1,8 +1,8 @@
 import React from 'react'
 
-function TaskContext() {
+function TaskContext({children}) {
   return (
-    <div>TaskContext</div>
+    <div>{children}</div>
   )
 }
 
