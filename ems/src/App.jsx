@@ -13,10 +13,14 @@ function App() {
   useEffect(() => {
     if (authData) {
       const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+      // const admin = authData.admin.find(e => e.email === loggedInUser.email);
+      setLoggedInUserData(authData.admin[0]);
+
       if (loggedInUser) {
         setUser(loggedInUser);
         if (loggedInUser.role === 'employee') {
           const employee = authData.employees.find(e => e.email === loggedInUser.email);
+
           setLoggedInUserData(employee);
         }
       }
@@ -26,6 +30,8 @@ function App() {
   const handleLogin = (email, password) => {
     if (email === 'admin@me.com' && password === '123') {
       const adminUser = { role: 'admin' };
+      // setLoggedInUserData(employee);
+
       setUser(adminUser);
       localStorage.setItem('loggedInUser', JSON.stringify(adminUser));
     } else if (authData) {
@@ -48,7 +54,7 @@ function App() {
   return (
     <>
       {!user ? <Login handleLogin={handleLogin} /> : ''}
-      {user?.role === 'admin' ? <AdminDashboard /> : (user?.role === 'employee' ? <EmployeeDashboard data={loggedInUserData} /> : null)}
+      {user?.role === 'admin' ? <AdminDashboard data={loggedInUserData} /> : (user?.role === 'employee' ? <EmployeeDashboard data={loggedInUserData} /> : null)}
     </>
   );
 }

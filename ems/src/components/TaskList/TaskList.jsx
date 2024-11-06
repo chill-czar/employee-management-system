@@ -2,7 +2,7 @@ import React from 'react';
 
 const TaskList = ({ data }) => {
     const cardData = data.data.tasks; // array
-    console.log(cardData);
+    console.log( "carddata",  cardData);
 
     return (
         <>

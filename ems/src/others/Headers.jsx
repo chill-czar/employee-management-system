@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Headers = ({ data }) => {
-  console.log(data.name)
+  // console.log(data.name)
   // const {name} = data
 
   function Logout() {
